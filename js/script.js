@@ -49,47 +49,48 @@ window.onscroll = () => {
 }
 
 // working contact
-const form = document.querySelector('form');
-const fullName = document.getElementById("name");
-const email = document.getElementById("email");
-const mobile = document.getElementById("mobile");
-const subject = document.getElementById("subject");
-const message = document.getElementById("message");
+const form = document.getElementById('form');
+const result = document.getElementById('result');
 
-function sendEmail() {
-    const bodyMessage = `Full Name: ${fullName.value}<br> Email: ${email.value}<br> Mobile Number: ${mobile.value}<br> Message: ${message.value}<br>`;
-
-    Email.send({
-        Host : "smtp.elasticemail.com",
-        Username : "raihanarrazzaq04@gmail.com",
-        Password : "8BFD349D8BB4E573865080DFBDEB363C3ED2",
-        To : 'raihanarrazzaq04@gmail.com',
-        From : "raihanarrazzaq04@gmail.com",
-        Subject : subject.value,
-        Body : bodyMessage
-    }).then(
-      message => {
-        if (message == "OK") {
-            Swal.fire({
-                title: "Success!",
-                text: "Message sent successfully!",
-                icon: "success"
-              });
-        }
-
-        if (message == "Failure sending mail.") {
-            Swal.fire({
-                title: "Failed.",
-                text: "Message failed to send.",
-                icon: "error"
-              });
-        }
-      }
-    );
-}
-
-form.addEventListener("submit", (e) => {
+form.addEventListener('submit', function(e) {
+    const formData = new FormData(form);
     e.preventDefault();
 
-    sendEmail();
+    const object = Object.fromEntries(formData);
+    const json = JSON.stringify(object);
+
+    result.innerHTML = "Please wait..."
+
+    fetch('https://api.web3forms.com/submit', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'Accept': 'application/json'
+            },
+            body: json
+        })
+        .then(async (response) => {
+            let json = await response.json();
+            if (response.status == 200) {
+                Swal.fire({
+                    title: "Success!",
+                    text: "Message sent successfully!",
+                    icon: "success"
+                  });
+            }
+        })
+        .catch(error => {
+            console.log(error);
+            Swal.fire({
+                title: "Failed",
+                text: "Message failed to sent.",
+                icon: "error"
+              });
+        })
+        .then(function() {
+            form.reset();
+            setTimeout(() => {
+                result.style.display = "none";
+            }, 3000);
+        });
 });

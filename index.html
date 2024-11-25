@@ -23,7 +23,7 @@
 
     <!-- header design-->
     <header class="header">
-        <a href="index.html" class="logo">Artrazzaq.<span class="animate" style="--i:1"></span></a>
+        <a href="" class="logo">Artrazzaq.<span class="animate" style="--i:1"></span></a>
 
         <div class="bx bx-menu" id="menu-icon"><span class="animate" style="--i:2"></span></div>
 
@@ -47,7 +47,7 @@
                 <h3>Frontend Developer</h3>
                 <span class="animate" style="--i:3"></span>
             </div>
-            <p>I am graduate of SMK Multimedia who is excited to start a career in the world of technology. During my school years, I have build a strong foundation in programming, graphic design, photography, videography, and an understanding of information technology.
+            <p>I have build a strong foundation in programming, graphic design, photography, videography, and an understanding of information technology.
                 <span class="animate" style="--i:4"></span>
             </p>
             
@@ -59,7 +59,7 @@
         </div>
 
         <div class="home-sci">
-            <a href="#"><i class='bx bxl-facebook'></i></a>
+            <a href="https://web.facebook.com/profile.php?id=61569636652482" target="_blank"><i class='bx bxl-facebook'></i></a>
             <a href="https://www.instagram.com/raihanarrazzaq" target="_blank"><i class='bx bxl-instagram'></i></a>
             <a href="https://x.com/raihanarrazzaq4" target="_blank"><i class='bx bxl-twitter'></i></a>
             <a href="https://www.linkedin.com/in/raihanarrazzaq" target="_blank"><i class='bx bxl-linkedin'></i></a>
@@ -106,7 +106,7 @@
                         <div class="content">
                             <div class="year"><i class='bx bxs-calendar'></i> 2010 - 2016</div>
                             <h3>25th State Elementary School, Kampung Sewu</h3>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati amet quasi quo cumque fugiat. Nihil deserunt quisquam molestias magni consectetur?</p>
+                            <p>During my elementary school years, I was introduced to the fascinating world of technology by using a computer for the very first time. This experience marked the beginning of my journey in understanding how basic technological tools work.</p>
                         </div>
                     </div>
 
@@ -114,7 +114,7 @@
                         <div class="content">
                             <div class="year"><i class='bx bxs-calendar'></i> 2016 - 2019</div>
                             <h3>State Junior High School 11 Surakarta</h3>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati amet quasi quo cumque fugiat. Nihil deserunt quisquam molestias magni consectetur?</p>
+                            <p>In middle school, I developed an interest in technology by learning coding through modifying game characters, marking a key step in understanding software and contributing to the digital world.</p>
                         </div>
                     </div>
 
@@ -137,8 +137,8 @@
                     <div class="education-content">
                         <div class="content">
                             <div class="year"><i class='bx bxs-calendar'></i>2022 - 2023</div>
-                            <h3>dsssss</h3>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati amet quasi quo cumque fugiat. Nihil deserunt quisquam molestias magni consectetur?</p>
+                            <h3>Video Editing</h3>
+                            <p>Experienced in creating attractive visual designs using CapCut. Have expertise in creating creative content for social media, presentation videos, and highlight videos for various events.</p>
                         </div>
                     </div>
 
@@ -146,7 +146,7 @@
                         <div class="content">
                             <div class="year"><i class='bx bxs-calendar'></i> 2022 - 2024</div>
                             <h3>Graphic Design</h3>
-                            <p>Experienced in creating attractive visual designs using Canva. have expertise in social media design, marketing and visual branding with a creative approach to strengthening brand identity.</p>
+                            <p>Experienced in creating attractive visual designs using Canva. Have expertise in social media design, marketing and visual branding with a creative approach to strengthening brand identity.</p>
                         </div>
                     </div>
 
@@ -154,7 +154,7 @@
                         <div class="content">
                             <div class="year"><i class='bx bxs-calendar'></i> 2024</div>
                             <h3>Web Development</h3>
-                            <p>Just beginning my journey in the world of coding. With a strong foundation in HTML, CSS, and JavaScript, I am dedicated to building functional and visually appealing websites.</p>
+                            <p>Just beginning my journey in the world of coding. With a strong foundation in HTML, CSS, and JavaScript. Experienced in creating responsive prtofolio websites (include this websites).</p>
                         </div>
                     </div>
 
@@ -235,14 +235,17 @@
     <section class="contact" id="contact">
         <h2 class="heading">Contact <span>Me!</span><span class="animate scroll" style="--i:1"></span></h2>
 
-        <form action="#">
+        <form method="POST" id="form">
+
+            <input type="hidden" name="access_key" value="bc55c0bd-1788-45b6-9f7f-d00c9dacb59b">
+
             <div class="input-box">
                 <div class="input-field">
-                    <input type="text" id="name" placeholder="Full Name" class="item" autocomplete="off" required>
+                    <input type="text" id="name" name="name" placeholder="Full Name" required>
                     <span class="focus"></span>
                 </div>
                 <div class="input-field">
-                    <input type="email" id="email" placeholder="Email Address" class="item" autocomplete="off" required>
+                    <input type="email" id="email" name="email" placeholder="Email Address" required>
                     <span class="focus"></span>
                 </div>
 
@@ -251,11 +254,11 @@
 
             <div class="input-box">
                 <div class="input-field">
-                    <input type="number" id="mobile" placeholder="Mobile Number" class="item" autocomplete="off" required>
+                    <input type="number" id="mobile" name="mobile" placeholder="Mobile Number" required>
                     <span class="focus"></span>
                 </div>
                 <div class="input-field">
-                    <input type="text"id="subject" placeholder="Email Subject" class="item" autocomplete="off" required>
+                    <input type="text" id="subject" name="subject" placeholder="Email Subject" required>
                     <span class="focus"></span>
                 </div>
 
@@ -263,7 +266,7 @@
             </div>
 
             <div class="textarea-field">
-                <textarea id="message" cols="30" rows="10" placeholder="Your Message" class="item" autocomplete="off" required></textarea>
+                <textarea id="message" name="message" cols="30" rows="10" placeholder="Your Message" required></textarea>
                 <span class="focus"></span>
 
                 <span class="animate scroll" style="--i:7"></span>
@@ -274,6 +277,8 @@
 
                 <span class="animate scroll" style="--i:9"></span>
             </div>
+
+            <div id="result"></div>
         </form>
     </section>
 
@@ -291,7 +296,6 @@
         </div>
     </footer>
 
-    <script src="https://smtpjs.com/v3/smtp.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="js/script.js"></script>
 </body>
